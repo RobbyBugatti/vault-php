@@ -5,6 +5,11 @@
             "Vault\\": "src/"
         }
     },
+    "require": {
+        "php" : ">=5.3.3",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
     "require-dev": {
         "phpunit/phpunit": "4.*"
     },
