@@ -1,5 +1,5 @@
 {
-    "name": "robby-bugatti/vault",
+    "name": "robby-bugatti/vault-php",
     "autoload": {
         "psr-4": {
             "Vault\\": "src/"
