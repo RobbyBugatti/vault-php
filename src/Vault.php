@@ -67,6 +67,41 @@ class Vault
         return $res;
     }
 
+    public static function seal()
+    {
+        $res = self::call('sys/seal', 'PUT', [], [], []);
+        return $res->body();
+    }
+
+    public static function unseal($args)
+    {
+        $res = self::call('sys/unseal', 'PUT', [], $args, []);
+        return $res->body();
+    }
+
+    public static function seal_status()
+    {
+        $res = self::call('sys/seal_status', 'GET');
+        return $res->body();
+    }
+
+    public static function initialized()
+    {
+        $res = self::call('sys/init');
+        return $res->body();
+    }
+
+    public static function create($args)
+    {
+        $res = self::call('sys/init', 'PUT', [], $args);
+        return $res->body();
+    }
+
+    public static function health()
+    {
+
+    }
+    
     protected function __construct($client)
     {
         $this->client = $client;

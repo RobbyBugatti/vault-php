@@ -32,7 +32,13 @@ class UserPassTest extends TestCase
 
     public function testList()
     {
-        $users = \Vault\Auth\Userpass::all();
-        var_dump($users);
+
+    }
+
+    public function testGet()
+    {
+        $user = 'rob_wittman';
+        $data = \Vault\Auth\Userpass::get($user);
+        var_dump($data);
     }
 }

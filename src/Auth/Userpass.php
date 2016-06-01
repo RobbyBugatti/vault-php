@@ -9,6 +9,13 @@ class Userpass
         $res = \Vault\Vault::call("auth/userpass", "LIST");
         return $res->body();
     }
+
+    public static function get($username)
+    {
+        $res = \Vault\Vault::call("auth/userpass/users/{$username}");
+        return $res->body();
+    }
+
     public static function authenticate($args)
     {
         $username = $args['username'];
