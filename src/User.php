@@ -12,7 +12,6 @@ class User
     protected $auth;
     protected $policies;
     protected $metadata;
-    protected $data;
 
     public function __construct($args)
     {
