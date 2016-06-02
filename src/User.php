@@ -12,6 +12,7 @@ class User
     protected $auth;
     protected $policies;
     protected $metadata;
+    protected $data;
 
     public function __construct($args)
     {
@@ -23,10 +24,25 @@ class User
         $this->auth = $args->auth;
         $this->policies = $args->auth->policies;
         $this->metadata = $args->auth->metadata;
+        $this->data = $args;
     }
 
     public function token()
     {
         return $this->auth->client_token;
+    }
+
+    public function data()
+    {
+        return $this->data;
+    }
+
+    public function __get($var)
+    {
+        if(property_exists(__CLASS___, $var))
+        {
+            return $this->var;
+        }
+        throw new Exception("Undefined property User::{$var}");
     }
 }
